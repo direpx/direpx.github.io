@@ -545,13 +545,40 @@ a {
   }
 
   .footer-inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .footer-business-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 14px;
+  }
+
+  .footer-business-summary > * {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-business-summary > :not(:last-child)::after {
+    display: none;
+  }
+
+  .footer-business-summary > :nth-child(odd) {
+    padding-right: 14px;
+  }
+
+  .footer-business-summary > :nth-child(odd)::after {
+    display: block;
   }
 
   .footer-meta {
+    align-self: end;
     justify-self: end;
     font-size: 8px;
+    line-height: 1.45;
   }
 
   .legal-header {
