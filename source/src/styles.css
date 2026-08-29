@@ -132,17 +132,6 @@ a {
   transition: width 180ms ease;
 }
 
-.build-note {
-  position: absolute;
-  left: 18px;
-  bottom: 12px;
-  z-index: 2;
-  color: rgba(255, 255, 255, 0.22);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  pointer-events: none;
-}
-
 .wordmark {
   display: block;
   width: clamp(188px, 31vw, 300px);
@@ -548,10 +537,6 @@ a {
 
   .store-link {
     min-width: 138px;
-  }
-
-  .build-note {
-    display: none;
   }
 
   .site-footer {

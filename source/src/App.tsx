@@ -26,7 +26,6 @@ export default function App() {
       <section className="brand-stage" aria-label="Direpx interactive mascot landing page">
         <div className="canvas-shell">
           <CrystalCubScene />
-          <div className="build-note">LOW-POLY · RIGGABLE EYES · CURSOR-WALKING</div>
         </div>
 
         <DirepxWordmark />
