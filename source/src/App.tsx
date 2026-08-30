@@ -9,7 +9,7 @@ function SiteFooter() {
           <span>디렙엑스(Direpx)</span>
           <span>대표 김준엽·황휘성</span>
           <span>사업자등록번호 243-06-03760</span>
-          <a href="mailto:direpx@gmail.com">direpx@gmail.com</a>
+          <span>direpx@gmail.com</span>
         </div>
 
         <div className="footer-meta">
@@ -38,6 +38,16 @@ export default function App() {
             Google Play
           </a>
         </nav>
+
+        <a
+          className="contact-link"
+          href="https://forms.gle/RE6j43gTQNJ13XT29"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Google Form으로 문의하기 (새 탭)"
+        >
+          Contact
+        </a>
       </section>
 
       <SiteFooter />
