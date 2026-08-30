@@ -1,13 +1,34 @@
+"use client";
+
+import { useState, type PointerEvent as ReactPointerEvent } from "react";
+
 export function DirepxWordmark() {
+  const [isXActive, setIsXActive] = useState(false);
+
+  const handlePointerEnter = (event: ReactPointerEvent<SVGSVGElement>) => {
+    if (event.pointerType !== "touch") setIsXActive(true);
+  };
+
+  const handlePointerRelease = (event: ReactPointerEvent<SVGSVGElement>) => {
+    if (event.pointerType === "touch") setIsXActive(false);
+  };
+
   return (
     <svg
-      className="wordmark"
+      className={`wordmark${isXActive ? " is-x-active" : ""}`}
       viewBox="0 0 386 92"
       role="img"
-      aria-labelledby="direpx-wordmark-title"
+      aria-label="DIREPX"
       tabIndex={0}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={() => setIsXActive(false)}
+      onPointerDown={(event) => {
+        if (event.pointerType === "touch") setIsXActive(true);
+      }}
+      onPointerUp={handlePointerRelease}
+      onPointerCancel={handlePointerRelease}
+      onBlur={() => setIsXActive(false)}
     >
-      <title id="direpx-wordmark-title">DIREPX</title>
       <g fill="#fff" fillRule="evenodd">
         <path d="M7 0h333v11H7z" />
         <path d="M6 27h37l15 15v26L43 83H6V27Zm13 12v32h19l7-7V46l-7-7H19Z" />
