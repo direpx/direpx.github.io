@@ -11,7 +11,6 @@ function SiteFooter() {
           <span>사업자등록번호 243-06-03760</span>
           <span>direpx@gmail.com</span>
         </div>
-
         <div className="footer-meta">
           <span>© 2026 direpx</span>
         </div>
@@ -27,18 +26,19 @@ export default function App() {
         <div className="canvas-shell">
           <CrystalCubScene />
         </div>
-
         <DirepxWordmark />
-
         <nav className="stores" aria-label="앱 다운로드 링크">
-          <a className="store-link" href="#app-store">
-            App Store
-          </a>
-          <a className="store-link" href="#google-play">
+          <a className="store-link" href="#app-store">App Store</a>
+          <a
+            className="store-link"
+            href="https://play.google.com/store/apps/details?id=com.Direp.DirepApp&hl=ko"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Google Play에서 Direpx 다운로드 (새 탭)"
+          >
             Google Play
           </a>
         </nav>
-
         <a
           className="contact-link"
           href="https://forms.gle/RE6j43gTQNJ13XT29"
@@ -49,7 +49,6 @@ export default function App() {
           Contact
         </a>
       </section>
-
       <SiteFooter />
     </main>
   );
