@@ -28,7 +28,15 @@ export default function App() {
         </div>
         <DirepxWordmark />
         <nav className="stores" aria-label="앱 다운로드 링크">
-          <a className="store-link" href="#app-store">App Store</a>
+          <a
+            className="store-link"
+            href="https://apps.apple.com/us/app/direpx-%EB%94%94%EB%A0%99%EC%97%91%EC%8A%A4/id6754797035"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="App Store에서 Direpx 다운로드 (새 탭)"
+          >
+            App Store
+          </a>
           <a
             className="store-link"
             href="https://play.google.com/store/apps/details?id=com.Direp.DirepApp&hl=ko"
