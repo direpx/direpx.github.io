@@ -12,6 +12,7 @@ function SiteFooter() {
           <span>direpx@gmail.com</span>
         </div>
         <div className="footer-meta">
+          <a href="/privacy/">Privacy</a>
           <span>© 2026 direpx</span>
         </div>
       </div>

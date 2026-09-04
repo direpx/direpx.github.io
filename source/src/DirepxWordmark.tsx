@@ -16,7 +16,7 @@ export function DirepxWordmark() {
   return (
     <svg
       className={`wordmark${isXActive ? " is-x-active" : ""}`}
-      viewBox="0 0 386 92"
+      viewBox="0 18 386 74"
       role="img"
       aria-label="DIREPX"
       tabIndex={0}
@@ -30,7 +30,6 @@ export function DirepxWordmark() {
       onBlur={() => setIsXActive(false)}
     >
       <g fill="#fff" fillRule="evenodd">
-        <path d="M7 0h333v11H7z" />
         <path d="M6 27h37l15 15v26L43 83H6V27Zm13 12v32h19l7-7V46l-7-7H19Z" />
         <path d="M73 27h13v56H73z" />
         <path d="M102 27h48l8 8v16l-8 8h-11l19 24h-16l-18-24h-9v24h-13V27Zm13 12v9h28l3-3v-3l-3-3h-28Z" />

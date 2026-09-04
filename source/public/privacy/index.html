@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href="https://direpx.github.io/privacy/" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <title>Privacy | direpx</title>
+    <style>
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+      :root {
+        color-scheme: dark;
+        --cyan: #28d1ff;
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.68);
+        --line: rgba(255, 255, 255, 0.18);
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        min-height: 100%;
+        margin: 0;
+        background: #000000;
+        color: var(--text);
+        font-family: "Pretendard Variable", Pretendard, -apple-system,
+          BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      }
+
+      body { min-height: 100svh; overflow-x: hidden; }
+      a { color: inherit; -webkit-tap-highlight-color: transparent; }
+
+      .legal-page { display: flex; min-height: 100svh; flex-direction: column; }
+
+      .legal-header {
+        display: flex;
+        width: min(1080px, calc(100% - 48px));
+        min-height: 108px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin: 0 auto;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .legal-brand { display: block; width: 138px; }
+      .legal-brand img { display: block; width: 100%; height: auto; }
+
+      .legal-nav { display: flex; gap: 24px; font-size: 14px; letter-spacing: .04em; }
+      .legal-nav a { color: rgba(255,255,255,.48); text-decoration: none; }
+      .legal-nav a[aria-current="page"] { color: #ffffff; }
+
+      .legal-document {
+        width: min(820px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 88px 0 112px;
+      }
+
+      .legal-kicker {
+        margin: 0 0 20px;
+        color: var(--cyan);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .12em;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(38px, 7vw, 76px);
+        font-weight: 700;
+        letter-spacing: -.055em;
+        line-height: .98;
+      }
+
+      .legal-intro {
+        max-width: 760px;
+        margin: 38px 0 0;
+        color: rgba(255,255,255,.76);
+        font-size: 17px;
+        line-height: 1.9;
+        word-break: keep-all;
+      }
+
+      .policy-scope {
+        margin: 32px 0 0;
+        padding: 22px 24px;
+        border-left: 3px solid var(--cyan);
+        background: rgba(40,209,255,.07);
+      }
+
+      .policy-scope strong { display: block; color: var(--cyan); font-size: 14px; }
+      .policy-scope p {
+        margin: 8px 0 0;
+        color: rgba(255,255,255,.78);
+        font-size: 16px;
+        line-height: 1.8;
+        word-break: keep-all;
+      }
+
+      .privacy-summary {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 64px 0 72px;
+        border-top: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(255,255,255,.2);
+      }
+
+      .privacy-summary div {
+        min-height: 118px;
+        padding: 22px 20px;
+        border-right: 1px solid rgba(255,255,255,.2);
+      }
+
+      .privacy-summary div:first-child { padding-left: 0; }
+      .privacy-summary div:last-child { border-right: 0; }
+      .privacy-summary strong, .privacy-summary span { display: block; }
+      .privacy-summary strong {
+        margin-bottom: 28px;
+        color: rgba(255,255,255,.45);
+        font-size: 14px;
+      }
+      .privacy-summary span { font-size: 16px; line-height: 1.6; }
+
+      .policy-section { padding: 42px 0; border-top: 1px solid var(--line); }
+      .policy-section h2 {
+        margin: 0 0 20px;
+        font-size: 18px;
+        line-height: 1.65;
+        word-break: keep-all;
+      }
+      .policy-section h3 {
+        margin: 28px 0 12px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .policy-section p, .policy-section li, .policy-contact dd {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.9;
+        word-break: keep-all;
+      }
+      .policy-section p { margin: 0; }
+      .policy-section p + p { margin-top: 12px; }
+      .policy-section strong { color: rgba(255,255,255,.92); }
+
+      .policy-list, .policy-fields { margin: 18px 0 0; padding-left: 24px; }
+      .policy-list > li, .policy-fields > li { margin-bottom: 12px; padding-left: 4px; }
+      .policy-list > li:last-child, .policy-fields > li:last-child { margin-bottom: 0; }
+      .policy-list li p { margin-top: 4px; }
+      .policy-fields { list-style: square; }
+
+      .policy-subsection {
+        margin-top: 30px;
+        padding: 22px 24px 24px;
+        border-left: 3px solid var(--cyan);
+        background: rgba(255,255,255,.035);
+      }
+      .policy-subsection h3 { margin-top: 0; }
+
+      .policy-contact { margin: 16px 0 26px; border-top: 1px solid rgba(255,255,255,.22); }
+      .policy-contact > div {
+        display: grid;
+        grid-template-columns: 112px minmax(0,1fr);
+        gap: 18px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+      .policy-contact dt { color: var(--cyan); font-size: 14px; line-height: 1.9; }
+      .policy-contact dd { margin: 0; }
+      .policy-links a, .policy-note a, .policy-section > p a {
+        color: var(--cyan);
+        text-underline-offset: 4px;
+      }
+      .policy-section .policy-note { margin-top: 22px; color: rgba(255,255,255,.48); font-size: 14px; }
+
+      .site-footer {
+        width: 100%;
+        margin-top: auto;
+        padding: 20px 24px 22px;
+        background: var(--cyan);
+        color: #000000;
+        font-size: 12px;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) auto;
+        align-items: center;
+        gap: 24px;
+        width: min(1080px,100%);
+        margin: 0 auto;
+      }
+      .footer-business-summary { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+      .footer-meta { display: flex; align-items: center; gap: 14px; white-space: nowrap; }
+      .footer-meta a { text-underline-offset: 3px; }
+
+      @media (max-width: 520px) {
+        .legal-header { width: calc(100% - 28px); min-height: 84px; }
+        .legal-brand { width: 112px; }
+        .legal-nav { gap: 14px; }
+        .legal-document { width: calc(100% - 28px); padding: 64px 0 80px; }
+        .legal-intro { margin-top: 28px; font-size: 16px; }
+        .policy-scope { padding: 18px 16px; }
+        .privacy-summary { grid-template-columns: 1fr; margin: 48px 0 60px; }
+        .privacy-summary div, .privacy-summary div:first-child {
+          min-height: auto;
+          padding: 18px 0;
+          border-right: 0;
+          border-bottom: 1px solid rgba(255,255,255,.14);
+        }
+        .privacy-summary div:last-child { border-bottom: 0; }
+        .privacy-summary strong { margin-bottom: 8px; }
+        .policy-section { padding: 34px 0; }
+        .policy-section h2 { font-size: 17px; }
+        .policy-subsection { padding: 18px 16px 20px; }
+        .policy-contact > div { grid-template-columns: 84px minmax(0,1fr); gap: 12px; }
+        .site-footer { padding: 18px 14px 20px; }
+        .footer-inner { grid-template-columns: 1fr; gap: 12px; }
+        .footer-business-summary { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+        .footer-meta { justify-content: flex-end; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="legal-page">
+      <header class="legal-header">
+        <a class="legal-brand" href="/" aria-label="direpx 홈으로 이동">
+          <img src="/direpx-wordmark.svg" width="386" height="74" alt="DIREPX" />
+        </a>
+        <nav class="legal-nav" aria-label="페이지 이동">
+          <a href="/">Home</a>
+          <a href="/privacy/" aria-current="page">Privacy</a>
+        </nav>
+      </header>
+
+      <article class="legal-document">
+        <p class="legal-kicker">PRIVACY POLICY</p>
+        <h1>개인정보 처리방침</h1>
+        <p class="legal-intro">
+          디렙엑스는 모바일 애플리케이션 DirepX 및 웹사이트를 운영하며, 「개인정보 보호법」
+          제30조에 따라 정보주체의 개인정보를 보호하고 관련 고충을 신속하고 원활하게
+          처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+        </p>
+
+        <aside class="policy-scope" aria-label="웹사이트 개인정보 처리 안내">
+          <strong>웹사이트 이용 안내</strong>
+          <p>
+            direpx.github.io는 앱과 브랜드 정보를 제공하는 정적 웹사이트입니다.
+            디렙엑스는 이 웹사이트에서 회원가입 정보를 받거나 이용자 분석·맞춤형 광고를 위한
+            쿠키 또는 추적 도구를 사용하지 않습니다. 문의 양식과 앱 스토어 링크를 선택하면
+            각 외부 서비스로 이동합니다.
+          </p>
+        </aside>
+
+        <div class="privacy-summary" aria-label="개인정보 처리방침 요약">
+          <div><strong>시행일</strong><span>2026. 01. 01.</span></div>
+          <div><strong>개인정보 문의</strong><span>direpx@gmail.com</span></div>
+          <div><strong>웹사이트 추적</strong><span>분석·광고 추적 없음</span></div>
+        </div>
+
+        <section class="policy-section">
+          <h2>제1조 (개인정보의 처리 목적)</h2>
+          <p>
+            &lt; DirepX &gt;은(는) 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는
+            개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며 이용 목적이 변경되는 경우에는
+            「개인정보 보호법」 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.
+          </p>
+          <ol class="policy-list">
+            <li><strong>모바일 앱 회원가입 및 관리</strong><p>회원 가입의사 확인, 회원제 서비스 제공에 따른 본인 식별·인증, 회원자격 유지·관리, 서비스 부정이용 방지, 각종 고지·통지, 고충처리 목적으로 개인정보를 처리합니다.</p></li>
+            <li><strong>문의 및 민원 처리</strong><p>Google Forms 문의 양식 또는 이메일로 접수된 문의자의 신원 확인, 문의사항 확인, 사실조사를 위한 연락·통지, 처리결과 통보 목적으로 개인정보를 처리합니다.</p></li>
+            <li><strong>모바일 앱 서비스 제공</strong><p>서비스 제공, 콘텐츠 제공, 맞춤서비스 제공을 목적으로 개인정보를 처리합니다.</p></li>
+            <li><strong>모바일 앱 마케팅 및 광고에의 활용</strong><p>신규 서비스(제품) 개발 및 맞춤 서비스 제공, 이벤트 및 광고성 정보 제공 및 참여기회 제공, 인구통계학적 특성에 따른 서비스 제공 및 광고 게재, 서비스의 유효성 확인, 접속빈도 파악 또는 회원의 서비스 이용에 대한 통계 등을 목적으로 개인정보를 처리합니다.</p></li>
+          </ol>
+        </section>
+
+        <section class="policy-section">
+          <h2>제2조 (개인정보의 처리 및 보유 기간)</h2>
+          <p>① &lt; DirepX &gt;은(는) 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집 시에 동의받은 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
+          <p>② 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.</p>
+          <div class="policy-subsection">
+            <h3>1. 회원가입 및 관리</h3>
+            <p>회원가입 및 관리와 관련한 개인정보는 수집·이용에 관한 동의일로부터 회원 탈퇴 시까지 위 이용목적을 위하여 보유·이용됩니다.</p>
+            <ul class="policy-fields"><li>보유근거 : 회원 기본 정보 유지 및 본인확인 절차</li><li>관련법령 :</li><li>예외사유 : 회원이 탈퇴 의사를 요청할 경우 지체 없이 파기</li></ul>
+          </div>
+          <div class="policy-subsection">
+            <h3>2. 재화 또는 서비스 제공</h3>
+            <p>재화 또는 서비스 제공과 관련한 개인정보는 수집·이용에 관한 동의일로부터 회원 탈퇴 시까지 위 이용목적을 위하여 보유·이용됩니다.</p>
+            <ul class="policy-fields"><li>보유근거 : 서비스 제공 및 이용자 문의·분쟁 처리를 위한 기록 유지</li><li>관련법령 : 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년</li><li>예외사유 :</li></ul>
+          </div>
+          <div class="policy-subsection">
+            <h3>3. 문의 접수 및 처리</h3>
+            <p>Google Forms를 통해 제출된 문의 정보는 문의 접수 및 처리 완료 시까지 보유·이용하며, 처리 목적이 달성된 후 지체 없이 파기합니다. 다만 관계 법령에 따라 보존할 필요가 있는 경우에는 해당 기간 동안 분리 보관합니다.</p>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h2>제3조 (처리하는 개인정보의 항목)</h2>
+          <p>① 디렙엑스는 정적 웹사이트 자체에서 개인정보를 직접 수집하지 않습니다. 모바일 앱과 Google Forms 문의 양식에서는 다음의 개인정보 항목을 처리합니다.</p>
+          <div class="policy-subsection"><h3>1. 회원가입 및 관리</h3><ul class="policy-fields"><li>필수항목 : 이메일, 비밀번호, 로그인ID</li><li>선택항목 : 이름, 휴대전화번호</li></ul></div>
+          <div class="policy-subsection"><h3>2. 재화 또는 서비스 제공</h3><ul class="policy-fields"><li>필수항목 : 이메일, 로그인ID, 서비스 이용 기록, 접속 로그, 접속 IP 정보, 기기정보(모델명, 운영체제 버전, 앱 버전)</li><li>선택항목 : 이용자가 앱에 입력한 개체 정보 및 사육 기록, 이용자가 업로드한 사진</li></ul></div>
+          <div class="policy-subsection"><h3>3. 문의 접수 (Google Forms)</h3><ul class="policy-fields"><li>필수항목 : 이메일, User ID, 문의 유형, 문의 내용</li><li>해당 시 : 이름 또는 소속</li></ul></div>
+          <div class="policy-subsection"><h3>4. 모바일 앱 마케팅 및 광고에의 활용</h3><ul class="policy-fields"><li>필수항목 : 이메일, 로그인ID, 서비스 이용 기록, 접속 로그, 광고식별자, 접속 IP 정보</li><li>선택항목 :</li></ul></div>
+        </section>
+
+        <section class="policy-section">
+          <h2>제4조 (개인정보의 파기절차 및 파기방법)</h2>
+          <p>① &lt; DirepX &gt;은(는) 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다.</p>
+          <p>② 정보주체로부터 동의받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는, 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</p>
+          <p>③ 개인정보 파기의 절차 및 방법은 다음과 같습니다.</p>
+          <ol class="policy-list"><li><strong>파기절차</strong><p>&lt; DirepX &gt;은(는) 파기 사유가 발생한 개인정보를 선정하고, 개인정보 보호책임자의 승인을 받아 개인정보를 파기합니다.</p></li><li><strong>파기방법</strong><p>전자적 파일 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용합니다. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.</p></li></ol>
+        </section>
+
+        <section class="policy-section">
+          <h2>제5조 (개인정보의 제3자 제공 및 처리위탁)</h2>
+          <p>① &lt; DirepX &gt;은(는) 정보주체의 개인정보를 제1조에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 「개인정보 보호법」 제17조 및 제18조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.</p>
+          <p>② 디렙엑스는 문의 접수를 위해 Google Forms를 이용합니다. 이용자가 문의 링크를 선택하면 Google이 제공하는 페이지로 이동하며, 제출한 내용은 디렙엑스 문의 담당자에게 전달됩니다. 외부 서비스에서 처리되는 정보에는 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>이 함께 적용됩니다.</p>
+          <p>③ 그 밖에 개인정보 처리업무의 위탁 또는 국외 이전이 발생하는 경우에는 수탁자, 처리 목적, 항목 및 보유기간 등 필요한 사항을 이 개인정보 처리방침에 공개하고 관계 법령에 따른 조치를 이행하겠습니다.</p>
+        </section>
+
+        <section class="policy-section" id="account-deletion">
+          <h2>제6조 (계정 및 개인정보의 삭제)</h2>
+          <p>① 정보주체는 언제든지 계정 삭제(회원 탈퇴)를 요청할 수 있습니다.</p>
+          <p>② 계정 삭제는 다음의 방법으로 신청할 수 있습니다.</p>
+          <ol class="policy-list"><li>앱 내 신청 : DirepX 앱 실행 후 [설정] → [계정] → [회원 탈퇴]</li><li>앱 외부 신청 : direpx@gmail.com으로 가입한 계정의 이메일 주소와 함께 삭제 요청을 보내주시면 본인 확인 후 처리합니다.</li></ol>
+          <p>③ 계정 삭제 시 회원 정보, 이용자가 입력한 개체 정보와 사육 기록, 업로드한 사진 등 해당 계정과 연결된 모든 개인정보가 지체 없이 파기되며 복구할 수 없습니다. 계정의 일시적 비활성화나 정지는 계정 삭제에 해당하지 않습니다.</p>
+          <p>④ 다만 법령에서 보존을 요구하는 정보가 있는 경우에는 제2조에 명시된 기간 동안 해당 정보를 분리 보관한 후 파기합니다.</p>
+        </section>
+
+        <section class="policy-section">
+          <h2>제7조 (정보주체와 법정대리인의 권리·의무 및 그 행사방법에 관한 사항)</h2>
+          <p>① 정보주체는 DirepX에 대해 언제든지 개인정보 열람·정정·삭제·처리정지 요구 등의 권리를 행사할 수 있습니다.</p>
+          <p>② 제1항에 따른 권리 행사는 DirepX에 대해 「개인정보 보호법」 시행령 제41조제1항에 따라 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며 DirepX은(는) 이에 대해 지체 없이 조치하겠습니다.</p>
+          <p>③ 제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 “개인정보 처리 방법에 관한 고시(제2020-7호)” 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.</p>
+          <p>④ 개인정보 열람 및 처리정지 요구는 「개인정보 보호법」 제35조 제4항, 제37조 제2항에 의하여 정보주체의 권리가 제한 될 수 있습니다.</p>
+          <p>⑤ 개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</p>
+          <p>⑥ DirepX은(는) 정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</p>
+        </section>
+
+        <section class="policy-section">
+          <h2>제8조 (개인정보의 안전성 확보조치에 관한 사항)</h2>
+          <p>&lt; DirepX &gt;은(는) 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.</p>
+          <ol class="policy-list">
+            <li><strong>개인정보 취급 직원의 최소화 및 교육</strong><p>개인정보를 취급하는 직원을 지정하고 담당자에 한정시켜 최소화 하여 개인정보를 관리하는 대책을 시행하고 있습니다.</p></li>
+            <li><strong>개인정보의 암호화</strong><p>이용자의 비밀번호는 암호화되어 저장 및 관리되고 있어 본인만이 알 수 있으며, 개인정보를 송수신하는 구간은 HTTPS 등 암호화된 통신을 통해 보호하고 있습니다.</p></li>
+            <li><strong>접속기록의 보관 및 위변조 방지</strong><p>개인정보처리시스템에 접속한 기록을 최소 1년 이상 보관, 관리하고 있으며, 접속기록이 위변조 및 도난, 분실되지 않도록 보안기능을 사용하고 있습니다.</p></li>
+            <li><strong>개인정보에 대한 접근 제한</strong><p>개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여, 변경, 말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있습니다.</p></li>
+          </ol>
+        </section>
+
+        <section class="policy-section">
+          <h2>제9조 (개인정보를 자동으로 수집하는 장치의 설치·운영 및 그 거부에 관한 사항)</h2>
+          <p>① direpx.github.io는 이용자 분석, 맞춤형 광고 또는 온라인 행태정보 수집을 위한 쿠키(cookie)나 추적 도구를 설치·운영하지 않습니다.</p>
+          <p>② 웹사이트의 App Store, Google Play 및 Google Forms 링크를 선택하여 외부 서비스로 이동한 이후에는 각 서비스 제공자의 개인정보 처리방침과 쿠키 정책이 적용됩니다.</p>
+          <p>③ 모바일 앱은 서비스 제공 과정에서 접속 로그, 접속 IP 정보 및 기기정보가 자동으로 생성·수집될 수 있습니다. 광고식별자는 Android [설정] → [개인정보 보호] → [광고] 또는 iOS [설정] → [개인정보 보호 및 보안] → [추적]에서 제한하거나 초기화할 수 있습니다.</p>
+        </section>
+
+        <section class="policy-section">
+          <h2>제10조 (개인정보 보호책임자에 관한 사항)</h2>
+          <p>① DirepX은(는) 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+          <h3>개인정보 보호책임자</h3>
+          <dl class="policy-contact"><div><dt>성명</dt><dd>김준엽</dd></div><div><dt>직책</dt><dd>대표</dd></div><div><dt>직급</dt><dd>공동대표</dd></div><div><dt>연락처</dt><dd>direpx@gmail.com</dd></div></dl>
+          <p>② 정보주체께서는 DirepX의 서비스(또는 사업)을 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자로 문의하실 수 있습니다. DirepX은(는) 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.</p>
+        </section>
+
+        <section class="policy-section">
+          <h2>제11조 (개인정보의 열람청구를 접수·처리하는 부서)</h2>
+          <p>정보주체는 「개인정보 보호법」 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. &lt; DirepX &gt;은(는) 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.</p>
+          <h3>개인정보 열람청구 접수·처리 부서</h3>
+          <dl class="policy-contact"><div><dt>부서명</dt><dd>DirepX 개발팀</dd></div><div><dt>담당자</dt><dd>황휘성</dd></div><div><dt>연락처</dt><dd>direpx@gmail.com</dd></div></dl>
+        </section>
+
+        <section class="policy-section">
+          <h2>제12조 (정보주체의 권익침해에 대한 구제방법)</h2>
+          <p>정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.</p>
+          <ol class="policy-list policy-links">
+            <li>개인정보분쟁조정위원회 : (국번없이) 1833-6972 (<a href="https://www.kopico.go.kr">www.kopico.go.kr</a>)</li>
+            <li>개인정보침해신고센터 : (국번없이) 118 (<a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a>)</li>
+            <li>대검찰청 : (국번없이) 1301 (<a href="https://www.spo.go.kr">www.spo.go.kr</a>)</li>
+            <li>경찰청 : (국번없이) 182 (<a href="https://ecrm.cyber.go.kr">ecrm.cyber.go.kr</a>)</li>
+          </ol>
+          <p>「개인정보보호법」 제35조(개인정보의 열람), 제36조(개인정보의 정정·삭제), 제37조(개인정보의 처리정지 등)의 규정에 의한 요구에 대하여 공공기관의 장이 행한 처분 또는 부작위로 인하여 권리 또는 이익의 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.</p>
+          <p class="policy-note">※ 행정심판에 대해 자세한 사항은 중앙행정심판위원회(<a href="https://www.simpan.go.kr">www.simpan.go.kr</a>) 홈페이지를 참고하시기 바랍니다.</p>
+        </section>
+
+        <section class="policy-section">
+          <h2>제13조 (개인정보 처리방침의 시행)</h2>
+          <p>이 개인정보처리방침은 2026년 1월 1일부터 적용됩니다.</p>
+        </section>
+      </article>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-business-summary" aria-label="direpx 사업자 정보">
+            <span>디렙엑스(Direpx)</span><span>대표 김준엽·황휘성</span>
+            <span>사업자등록번호 243-06-03760</span><span>direpx@gmail.com</span>
+          </div>
+          <div class="footer-meta"><a href="/privacy/">Privacy</a><span>© 2026 direpx</span></div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
