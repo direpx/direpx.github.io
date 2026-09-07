@@ -3,18 +3,10 @@ import { DirepxWordmark } from "./DirepxWordmark";
 
 function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer landing-footer">
       <div className="footer-inner">
-        <div className="footer-business-summary" aria-label="direpx 사업자 정보">
-          <span>디렙엑스(Direpx)</span>
-          <span>대표 김준엽·황휘성</span>
-          <span>사업자등록번호 243-06-03760</span>
-          <span>direpx@gmail.com</span>
-        </div>
-        <div className="footer-meta">
-          <a href="/privacy/">Privacy</a>
-          <span>© 2026 direpx</span>
-        </div>
+        <span>© 2026 direpx</span>
+        <a href="/privacy/">Privacy</a>
       </div>
     </footer>
   );
@@ -23,6 +15,7 @@ function SiteFooter() {
 export default function App() {
   return (
     <main className="direpx-page">
+      <div className="landing-screen">
       <section className="brand-stage" aria-label="Direpx interactive mascot landing page">
         <div className="canvas-shell">
           <CrystalCubScene />
@@ -57,6 +50,15 @@ export default function App() {
         >
           Contact
         </a>
+      </section>
+      </div>
+      <section className="business-section" aria-label="direpx 사업자 정보">
+        <div className="business-details">
+          <p>디렙엑스(Direpx)</p>
+          <p>대표 김준엽·황휘성</p>
+          <p>사업자등록번호 243-06-03760</p>
+          <p>direpx@gmail.com</p>
+        </div>
       </section>
       <SiteFooter />
     </main>
