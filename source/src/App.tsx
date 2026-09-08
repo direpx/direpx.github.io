@@ -3,9 +3,22 @@ import { DirepxWordmark } from "./DirepxWordmark";
 
 function SiteFooter() {
   return (
-    <footer className="site-footer landing-footer">
+<footer className="site-footer landing-footer">
       <div className="footer-inner">
         <span>© 2026 direpx</span>
+        <a
+          className="footer-instagram"
+          href="https://www.instagram.com/direp.x/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="DirepX Instagram (새 탭)"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
       </div>
     </footer>
   );
