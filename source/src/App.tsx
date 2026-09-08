@@ -6,7 +6,6 @@ function SiteFooter() {
     <footer className="site-footer landing-footer">
       <div className="footer-inner">
         <span>© 2026 direpx</span>
-        <a href="/privacy/">Privacy</a>
       </div>
     </footer>
   );
@@ -41,6 +40,8 @@ export default function App() {
             Google Play
           </a>
         </nav>
+        <nav className="landing-links" aria-label="문의 및 사이트 안내">
+        <a className="contact-link" href="/team/">Team</a>
         <a
           className="contact-link"
           href="https://forms.gle/RE6j43gTQNJ13XT29"
@@ -50,6 +51,8 @@ export default function App() {
         >
           Contact
         </a>
+        <a className="contact-link" href="/privacy/">Privacy</a>
+        </nav>
       </section>
       </div>
       <section className="business-section" aria-label="direpx 사업자 정보">
