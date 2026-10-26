@@ -82,7 +82,6 @@
       openViewer(index, link);
     });
   });
-  carousel.querySelector('[data-expand]').addEventListener('click', (event) => openViewer(current, event.currentTarget));
   viewerPrevious.addEventListener('click', () => showExpanded(expanded - 1));
   viewerNext.addEventListener('click', () => showExpanded(expanded + 1));
   viewer.addEventListener('keydown', (event) => handleKeys(event, expanded, showExpanded));

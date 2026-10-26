@@ -1,32 +1,27 @@
 .blog-page { padding-bottom: 0; }
 .blog-page + .site-footer { position: static; }
 .blog-content { width: min(760px, calc(100% - 48px)); margin: 0 auto; padding: 48px 0 88px; }
-.blog-masthead { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 36px; }
-.blog-kicker { color: #28d1ff; font: 13px "Galmuri11", monospace; letter-spacing: .08em; }
-.blog-masthead time { color: #909090; font-size: 13px; font-variant-numeric: tabular-nums; }
 .slideshow { width: min(100%, 560px); margin: 0 auto; }
-.slideshow-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; font-size: 14px; }
-.slideshow-heading > span { color: #dedede; font-weight: 600; }
-.slideshow-heading a, .back-to-top { color: #a9a9a9; text-decoration: none; }
-.slideshow-heading a:hover, .back-to-top:hover { color: #28d1ff; }
+.back-to-top { color: #a9a9a9; text-decoration: none; }
+.back-to-top:hover { color: #28d1ff; }
 .slide-track { display: flex; width: 100%; margin: 0; padding: 0; list-style: none; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border-radius: 4px; background: #171717; }
 .slide-track::-webkit-scrollbar { display: none; }
 .slide { flex: 0 0 100%; width: 100%; scroll-snap-align: start; scroll-snap-stop: always; }
 .slide-image-link { display: block; cursor: zoom-in; }
 .slide img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; }
-.slide-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.slide-controls { display: flex; align-items: center; justify-content: center; margin-top: 12px; }
 .slide-pagination { display: flex; align-items: center; gap: 8px; }
 .slide-counter { min-width: 64px; text-align: center; color: #d0d0d0; font-size: 13px; font-variant-numeric: tabular-nums; letter-spacing: .06em; }
-.icon-button, .expand-button { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 12px; border: 1px solid #383838; border-radius: 4px; background: #111; color: #eee; font-family: inherit; cursor: pointer; }
+.icon-button { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 12px; border: 1px solid #383838; border-radius: 4px; background: #111; color: #eee; font-family: inherit; cursor: pointer; }
 .icon-button { font-size: 22px; }
-.expand-button { flex-shrink: 0; gap: 8px; font-size: 13px; white-space: nowrap; }
-.icon-button:hover, .expand-button:hover { background: #202020; border-color: #686868; }
+.icon-button:hover { background: #202020; border-color: #686868; }
 .icon-button[aria-disabled="true"] { color: #606060; cursor: default; background: transparent; }
 .blog-page :focus-visible, .slide-viewer :focus-visible { outline: 2px solid #28d1ff; outline-offset: 4px; }
 .slide-track a:focus-visible { outline-offset: -4px; }
 .slide-hint { color: #a9a9a9; font-size: 13px; }
 .blog-article { margin-top: 64px; padding-top: 56px; border-top: 1px solid #333; scroll-margin-top: 36px; word-break: keep-all; overflow-wrap: anywhere; }
-.blog-article h1 { margin: 0 0 40px; color: #fff; font-size: clamp(28px, 4.5vw, 40px); line-height: 1.45; letter-spacing: -.035em; }
+.blog-article h1 { margin: 0 0 16px; color: #fff; font-size: clamp(28px, 4.5vw, 40px); line-height: 1.45; letter-spacing: -.035em; }
+.article-date { display: block; margin-bottom: 40px; color: #909090; font-size: 13px; font-variant-numeric: tabular-nums; }
 .article-body { color: #c5c5c5; font-size: 17px; line-height: 1.95; letter-spacing: -.015em; }
 .article-body p { margin: 0 0 28px; }
 .article-body .article-signature { margin: 32px 0 0; color: #fff; font-weight: 600; }
@@ -45,15 +40,12 @@ html.viewer-open { overflow: hidden; }
 [hidden] { display: none !important; }
 @media (max-width: 520px) {
   .blog-content { width: calc(100% - 32px); padding: 28px 0 56px; }
-  .blog-masthead { margin-bottom: 28px; }
-  .slideshow-heading { font-size: 12px; }
   .blog-article { margin-top: 44px; padding-top: 36px; }
-  .blog-article h1 { margin-bottom: 28px; }
+  .article-date { margin-bottom: 28px; }
   .article-body { font-size: 16px; line-height: 1.9; }
   .article-body p { margin-bottom: 24px; }
   .viewer-actions { gap: 12px; }
   .viewer-image-wrap { padding: 8px; }
-  .slide-controls { gap: 8px; }
   .slide-pagination { gap: 4px; }
   .slide-counter { min-width: 60px; }
 }
