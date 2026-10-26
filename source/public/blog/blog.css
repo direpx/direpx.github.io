@@ -24,8 +24,8 @@
 .article-date { display: block; margin-bottom: 40px; color: #909090; font-size: 13px; font-variant-numeric: tabular-nums; }
 .article-body { margin-top: 48px; color: #c5c5c5; font-size: 17px; line-height: 1.95; letter-spacing: -.015em; }
 .article-body p { margin: 0 0 28px; }
-.operation-notice { margin-bottom: 40px; padding: 24px 28px; border: 1px solid #29343a; border-left: 3px solid #28d1ff; background: #0b1114; color: #dde3e6; }
-.operation-notice p { margin-bottom: 18px; }
+.operation-notice { margin-bottom: 40px; padding: 24px 28px; border: 1px solid #29343a; border-left: 3px solid #28d1ff; background: #0b1114; color: #dde3e6; font-size: 17px; line-height: 1.95; letter-spacing: -.015em; }
+.operation-notice p { margin: 0 0 18px; }
 .operation-notice p:last-child { margin-bottom: 0; }
 .operation-notice strong { color: #fff; font-weight: 600; }
 .article-body .article-signature { margin: 32px 0 0; color: #fff; font-weight: 600; }
@@ -47,7 +47,7 @@ html.viewer-open { overflow: hidden; }
   .article-date { margin-bottom: 28px; }
   .article-body { margin-top: 32px; font-size: 16px; line-height: 1.9; }
   .article-body p { margin-bottom: 24px; }
-  .operation-notice { margin-bottom: 32px; padding: 20px 18px; }
+  .operation-notice { margin-bottom: 32px; padding: 20px 18px; font-size: 16px; line-height: 1.9; }
   .operation-notice p { margin-bottom: 18px; }
   .operation-notice p:last-child { margin-bottom: 0; }
   .viewer-actions { gap: 12px; }
