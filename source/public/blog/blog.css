@@ -19,11 +19,15 @@
 .blog-page :focus-visible, .slide-viewer :focus-visible { outline: 2px solid #28d1ff; outline-offset: 4px; }
 .slide-track a:focus-visible { outline-offset: -4px; }
 .slide-hint { color: #a9a9a9; font-size: 13px; }
-.blog-article { margin-top: 64px; padding-top: 56px; border-top: 1px solid #333; scroll-margin-top: 36px; word-break: keep-all; overflow-wrap: anywhere; }
+.blog-article { scroll-margin-top: 36px; word-break: keep-all; overflow-wrap: anywhere; }
 .blog-article h1 { margin: 0 0 16px; color: #fff; font-size: clamp(28px, 4.5vw, 40px); line-height: 1.45; letter-spacing: -.035em; }
 .article-date { display: block; margin-bottom: 40px; color: #909090; font-size: 13px; font-variant-numeric: tabular-nums; }
-.article-body { color: #c5c5c5; font-size: 17px; line-height: 1.95; letter-spacing: -.015em; }
+.article-body { margin-top: 48px; color: #c5c5c5; font-size: 17px; line-height: 1.95; letter-spacing: -.015em; }
 .article-body p { margin: 0 0 28px; }
+.operation-notice { margin-bottom: 40px; padding: 24px 28px; border: 1px solid #29343a; border-left: 3px solid #28d1ff; background: #0b1114; color: #dde3e6; }
+.operation-notice p { margin-bottom: 18px; }
+.operation-notice p:last-child { margin-bottom: 0; }
+.operation-notice strong { color: #fff; font-weight: 600; }
 .article-body .article-signature { margin: 32px 0 0; color: #fff; font-weight: 600; }
 .back-to-top { display: inline-block; margin-top: 56px; padding: 12px 0; font-size: 14px; }
 .skip-link { position: absolute; top: 12px; left: 12px; z-index: 10; padding: 12px; background: #28d1ff; color: #000; transform: translateY(-200%); font: 15px sans-serif; }
@@ -40,10 +44,12 @@ html.viewer-open { overflow: hidden; }
 [hidden] { display: none !important; }
 @media (max-width: 520px) {
   .blog-content { width: calc(100% - 32px); padding: 28px 0 56px; }
-  .blog-article { margin-top: 44px; padding-top: 36px; }
   .article-date { margin-bottom: 28px; }
-  .article-body { font-size: 16px; line-height: 1.9; }
+  .article-body { margin-top: 32px; font-size: 16px; line-height: 1.9; }
   .article-body p { margin-bottom: 24px; }
+  .operation-notice { margin-bottom: 32px; padding: 20px 18px; }
+  .operation-notice p { margin-bottom: 18px; }
+  .operation-notice p:last-child { margin-bottom: 0; }
   .viewer-actions { gap: 12px; }
   .viewer-image-wrap { padding: 8px; }
   .slide-pagination { gap: 4px; }
