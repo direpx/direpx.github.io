@@ -55,6 +55,7 @@ export default function App() {
         </nav>
         <nav className="landing-links" aria-label="문의 및 사이트 안내">
         <a className="contact-link" href="/team/">Team</a>
+        <a className="contact-link" href="/blog/">Blog</a>
         <a
           className="contact-link"
           href="https://forms.gle/RE6j43gTQNJ13XT29"

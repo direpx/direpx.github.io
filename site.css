@@ -333,10 +333,11 @@ a {
 }
 
 .landing-links {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: baseline;
-  column-gap: 24px;
+  gap: 16px 24px;
   margin-top: 24px;
 }
 
@@ -536,6 +537,7 @@ a {
 .legal-brand {
   display: block;
   width: 138px;
+  flex-shrink: 0;
 }
 
 .legal-brand img {
@@ -978,6 +980,9 @@ a {
     gap: 14px;
     font-size: 9px;
   }
+
+  .legal-header { gap: 12px; }
+  .legal-nav { flex-wrap: wrap; justify-content: flex-end; }
 
   .legal-document,
   .contact-panel {
